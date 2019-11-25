@@ -5,4 +5,4 @@
 
 ## 简介
 
-从[这里](https://github.com/Zoctan/spring-boot-vue-admin/blob)克隆下来的项目，作为作业使用
+从[这里](https://github.com/Zoctan/spring-boot-vue-admin)克隆下来的项目，作为作业使用
