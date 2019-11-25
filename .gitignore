@@ -1,0 +1,9 @@
+
+vue/\.idea/
+
+vue/package-lock\.json
+api/.settings/org.eclipse.jdt.apt.core.prefs
+api/.classpath
+api/.project
+api/.settings/org.eclipse.jdt.core.prefs
+api/.settings/org.eclipse.core.resources.prefs

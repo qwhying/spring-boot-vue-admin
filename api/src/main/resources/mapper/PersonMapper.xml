@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zoctan.api.mapper.PersonMapper">
+  <resultMap id="BaseResultMap" type="com.zoctan.api.entity.Person">
+    <!--@mbg.generated-->
+    <!--@Table person-->
+    <id column="phone_no" jdbcType="VARCHAR" property="phoneNo" />
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="stu_id" jdbcType="VARCHAR" property="stuId" />
+    <result column="identity" jdbcType="VARCHAR" property="identity" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="organization" jdbcType="VARCHAR" property="organization" />
+    <result column="college" jdbcType="VARCHAR" property="college" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    phone_no, id, `name`, stu_id, `identity`, `password`, organization, college
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from person
+    where phone_no = #{phoneNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from person
+    where phone_no = #{phoneNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zoctan.api.entity.Person">
+    <!--@mbg.generated-->
+    insert into person (phone_no, id, `name`, 
+      stu_id, `identity`, `password`, 
+      organization, college)
+    values (#{phoneNo,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{stuId,jdbcType=VARCHAR}, #{identity,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{organization,jdbcType=VARCHAR}, #{college,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zoctan.api.entity.Person">
+    <!--@mbg.generated-->
+    insert into person
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="phoneNo != null">
+        phone_no,
+      </if>
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="stuId != null">
+        stu_id,
+      </if>
+      <if test="identity != null">
+        `identity`,
+      </if>
+      <if test="password != null">
+        `password`,
+      </if>
+      <if test="organization != null">
+        organization,
+      </if>
+      <if test="college != null">
+        college,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="phoneNo != null">
+        #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="stuId != null">
+        #{stuId,jdbcType=VARCHAR},
+      </if>
+      <if test="identity != null">
+        #{identity,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="organization != null">
+        #{organization,jdbcType=VARCHAR},
+      </if>
+      <if test="college != null">
+        #{college,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zoctan.api.entity.Person">
+    <!--@mbg.generated-->
+    update person
+    <set>
+      <if test="id != null">
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="stuId != null">
+        stu_id = #{stuId,jdbcType=VARCHAR},
+      </if>
+      <if test="identity != null">
+        `identity` = #{identity,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="organization != null">
+        organization = #{organization,jdbcType=VARCHAR},
+      </if>
+      <if test="college != null">
+        college = #{college,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where phone_no = #{phoneNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zoctan.api.entity.Person">
+    <!--@mbg.generated-->
+    update person
+    set id = #{id,jdbcType=INTEGER},
+      `name` = #{name,jdbcType=VARCHAR},
+      stu_id = #{stuId,jdbcType=VARCHAR},
+      `identity` = #{identity,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      organization = #{organization,jdbcType=VARCHAR},
+      college = #{college,jdbcType=VARCHAR}
+    where phone_no = #{phoneNo,jdbcType=VARCHAR}
+  </update>
+</mapper>
